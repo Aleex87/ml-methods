@@ -8,6 +8,7 @@ not min–max normalization.
   - difference between classification and regression
   - normalization is used some time in deep learning (standardization not)
   - Confusion Matrix explanation (cats vs dogs example)
+  - difference between overfitting and underfitting 
   - Supervised vs Unsupervised Learning
   - sklearn vs PyTorch vs TensorFlow
   - Real-world data loading with pd.read_csv("...")
