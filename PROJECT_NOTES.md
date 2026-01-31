@@ -5,6 +5,7 @@
   - In this project, the term "scaling" refers to standardization
 (using mean = 0 and standard deviation = 1),
 not min–max normalization.
+  - difference between classification and regression
   - normalization is used some time in deep learning (standardization not)
   - Confusion Matrix explanation (cats vs dogs example)
   - Supervised vs Unsupervised Learning
