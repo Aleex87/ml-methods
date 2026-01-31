@@ -5,3 +5,5 @@
   - Supervised vs Unsupervised Learning
   - sklearn vs PyTorch vs TensorFlow
   - Real-world data loading with pd.read_csv("...")
+  - difference betwee calssification and regression 
+  
