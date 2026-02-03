@@ -2,6 +2,7 @@
 __pycache__/
 *.py[codz]
 *$py.class
+*.pyc
 
 # C extensions
 *.so
@@ -213,3 +214,4 @@ notebooks/supervised/regression/models_supervised_learning/regression/
 *.joblib
 *.pkl
 *scaler*.joblib
+
