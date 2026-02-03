@@ -1,5 +1,5 @@
 def main():
-    print("Hello from ml-methods!")
+    print("Hello from sklearn!")
 
 
 if __name__ == "__main__":
