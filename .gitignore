@@ -215,3 +215,4 @@ notebooks/supervised/regression/models_supervised_learning/regression/
 *.pkl
 *scaler*.joblib
 
+PROJECT_NOTES.md
