@@ -1,2 +1,2 @@
-# ml-methods
+# Machine Learning Methods
 Ml methods guide 
