@@ -216,3 +216,6 @@ notebooks/supervised/regression/models_supervised_learning/regression/
 *scaler*.joblib
 
 PROJECT_NOTES.md
+
+docs/foundations/foundation_classical_ml.ipynb
+docs/foundations/foundation_DL.ipynb
