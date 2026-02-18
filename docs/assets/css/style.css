@@ -121,3 +121,67 @@ a {
 a:hover {
   text-decoration: underline;
 }
+/* =========================
+   SECTION CARDS
+========================= */
+
+.section-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.section-card h2 {
+  margin-top: 0;
+}
+
+.section-card ul {
+  margin-top: 15px;
+}
+
+/* =========================
+   PAGE BANNER
+========================= */
+
+.page-banner {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-banner h1 {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.page-banner p {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+/* Deep Learning Banner Variant */
+
+.page-banner-dl {
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-banner-dl h1 {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.page-banner-dl p {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.9;
+}
