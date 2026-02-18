@@ -92,6 +92,21 @@ This project intentionally focuses on model behavior and structure rather than o
 
 ---
 
+## Project Structure
+
+The repository is organized into clear logical sections:
+
+- `notebooks/` → Model implementations and experiments
+- `docs/` → Website and structured documentation
+- `foundations/` → Conceptual explanations separated from implementation
+- `models/` → Saved trained models
+- `data/` → Example datasets
+- `environments/` → Isolated virtual environments per framework
+
+This separation reflects a deliberate design choice: conceptual clarity first, implementation second.
+
+---
+
 ## Environment Structure
 
 To avoid dependency conflicts and ensure stability, separate virtual environments were created for different frameworks:
