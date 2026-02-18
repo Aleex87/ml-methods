@@ -178,3 +178,20 @@ It emphasizes:
 - reproducibility
 - conceptual depth
 
+---
+
+## Visual Style
+
+The website and converted notebooks use a unified dark theme to ensure visual consistency.
+
+Design principles:
+
+- Minimal and professional dark interface
+- Clear hierarchy and readable typography
+- Slightly elevated notebook cells for clarity
+- Consistent accent color for links and highlights
+
+Notebook HTML files are post-processed to include a custom CSS layer (`notebook_dark.css`),
+ensuring they remain visually aligned with the main website layout.
+
+Future additions should follow this same visual language for consistency.
