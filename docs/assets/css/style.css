@@ -136,3 +136,47 @@ a:hover {
   text-align: center;
   margin-top: 60px;
 }
+
+/* ===== HERO BANNER ===== */
+
+.hero-banner {
+  padding: 140px 20px 110px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e1b4b 35%,
+    #312e81 60%,
+    #2563eb 85%,
+    #06b6d4 100%
+  );
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  filter: blur(80px);
+}
+
+.hero-banner h1 {
+  font-size: 58px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+}
+
+.hero-banner p {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  max-width: 720px;
+  margin: auto;
+}
