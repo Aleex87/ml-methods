@@ -1,122 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title> evaluation metrics.Value.ToUpper() valuation evaluation
-metrics.Value.ToUpper() etrics</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>evaluation_metrics</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
-
 <body>
-
-  <div class="page-banner">
-    <h1> evaluation metrics.Value.ToUpper() valuation evaluation
-metrics.Value.ToUpper() etrics</h1>
-    <p>Foundations topic</p>
-  </div>
-
-  <div class="container">
-    <div class="section-card">
-      <h1 id="evaluation-metrics">Evaluation Metrics</h1>
-      <p>After training a machine learning model, we need to understand
-      <strong>how good its predictions really are</strong>.</p>
-      <p>Evaluation metrics help us answer different questions about
-      model behavior. There is no single “best” metric — each one
-      highlights a different aspect of performance.</p>
-      <hr />
-      <h2 id="metrics-for-regression">Metrics for Regression</h2>
-      <p>In regression problems, predictions are continuous values.</p>
-      <p>Regression metrics measure <strong>how far predictions are from
-      the true values</strong>.</p>
-      <p>Common regression metrics include: - MAE, MSE, RMSE - R²
-      score</p>
-      <p>In general: - lower error means better predictions - different
-      metrics penalize errors in different ways</p>
-      <hr />
-      <h2 id="metrics-for-classification">Metrics for
-      Classification</h2>
-      <p>In classification, the model answers a <strong>yes / no
-      question</strong> or chooses a class.</p>
-      <p>Before defining metrics, we must clearly define the question
-      the model is answering.</p>
-      <hr />
-      <h2 id="example-problem">Example Problem</h2>
-      <p><strong>Question:</strong><br />
-      &gt; Does this image contain a cat?</p>
-      <p>Possible answers: - <strong>Yes</strong> → Cat -
-      <strong>No</strong> → Not a cat</p>
-      <p>The confusion matrix helps us understand how the model answers
-      this question.</p>
-      <hr />
-      <h2 id="confusion-matrix-cat-detection-example">Confusion Matrix
-      (Cat Detection Example)</h2>
-      <pre><code>                 Predicted
+<h1 id="evaluation-metrics">Evaluation Metrics</h1>
+<p>After training a machine learning model, we need to understand
+<strong>how good its predictions really are</strong>.</p>
+<p>Evaluation metrics help us answer different questions about model
+behavior. There is no single “best” metric — each one highlights a
+different aspect of performance.</p>
+<hr />
+<h2 id="metrics-for-regression">Metrics for Regression</h2>
+<p>In regression problems, predictions are continuous values.</p>
+<p>Regression metrics measure <strong>how far predictions are from the
+true values</strong>.</p>
+<p>Common regression metrics include: - MAE, MSE, RMSE - R² score</p>
+<p>In general: - lower error means better predictions - different
+metrics penalize errors in different ways</p>
+<hr />
+<h2 id="metrics-for-classification">Metrics for Classification</h2>
+<p>In classification, the model answers a <strong>yes / no
+question</strong> or chooses a class.</p>
+<p>Before defining metrics, we must clearly define the question the
+model is answering.</p>
+<hr />
+<h2 id="example-problem">Example Problem</h2>
+<p><strong>Question:</strong><br />
+&gt; Does this image contain a cat?</p>
+<p>Possible answers: - <strong>Yes</strong> → Cat - <strong>No</strong>
+→ Not a cat</p>
+<p>The confusion matrix helps us understand how the model answers this
+question.</p>
+<hr />
+<h2 id="confusion-matrix-cat-detection-example">Confusion Matrix (Cat
+Detection Example)</h2>
+<pre><code>                 Predicted
             |     Cat     |   Not Cat</code></pre>
-      <p>Interpretation: - <strong>True Positive (TP)</strong>: image
-      contains a cat, model says “cat” - <strong>False Negative
-      (FN)</strong>: image contains a cat, model says “not cat” -
-      <strong>False Positive (FP)</strong>: image does not contain a
-      cat, model says “cat” - <strong>True Negative (TN)</strong>: image
-      does not contain a cat, model says “not cat”</p>
-      <hr />
-      <h2 id="accuracy">Accuracy</h2>
-      <p>Accuracy answers the question:</p>
-      <blockquote>
-      <p>How often is the model correct overall?</p>
-      </blockquote>
-      <p>Accuracy is useful when: - classes are balanced - all errors
-      have similar consequences</p>
-      <p>Accuracy can be misleading when: - one class is much more
-      frequent than the other - false positives and false negatives have
-      different costs</p>
-      <hr />
-      <h2 id="precision">Precision</h2>
-      <p>Precision answers the question:</p>
-      <blockquote>
-      <p>When the model predicts “cat”, how often is it correct?</p>
-      </blockquote>
-      <p>Precision is important when: - false positives are costly - we
-      want to trust positive predictions</p>
-      <h3 id="examples">Examples:</h3>
-      <ul>
-      <li>Spam detection (do not mark real emails as spam)</li>
-      <li>Medical diagnosis (avoid false alarms)</li>
-      <li>Fire alarm systems (avoid unnecessary alerts)</li>
-      </ul>
-      <hr />
-      <h2 id="recall">Recall</h2>
-      <p>Recall answers the question:</p>
-      <blockquote>
-      <p>How many actual cats did the model successfully find?</p>
-      </blockquote>
-      <p>Recall is important when: - false negatives are costly -
-      missing a positive case is dangerous</p>
-      <h3 id="examples-1">Examples:</h3>
-      <ul>
-      <li>Cancer detection (do not miss sick patients)</li>
-      <li>Security systems</li>
-      <li>Defect detection in manufacturing</li>
-      </ul>
-      <hr />
-      <h2 id="f1-score">F1-score</h2>
-      <p>The F1-score balances <strong>precision and
-      recall</strong>.</p>
-      <p>It is useful when: - classes are imbalanced - both false
-      positives and false negatives matter - a single metric is needed
-      for comparison</p>
-      <hr />
-      <h2 id="why-this-matters">Why This Matters</h2>
-      <p>Evaluation metrics are not just numbers.</p>
-      <p>They reflect: - the question the model is answering - the
-      real-world cost of errors - the priorities of the problem</p>
-      <p>Choosing the right metric is a <strong>design
-      decision</strong>, not a technical detail.</p>
-    </div>
-
-    <p style="text-align:center; margin-top:60px;">
-      <a href="../index.html">← Back</a>
-    </p>
-  </div>
-
+<p>Interpretation: - <strong>True Positive (TP)</strong>: image contains
+a cat, model says “cat” - <strong>False Negative (FN)</strong>: image
+contains a cat, model says “not cat” - <strong>False Positive
+(FP)</strong>: image does not contain a cat, model says “cat” -
+<strong>True Negative (TN)</strong>: image does not contain a cat, model
+says “not cat”</p>
+<hr />
+<h2 id="accuracy">Accuracy</h2>
+<p>Accuracy answers the question:</p>
+<blockquote>
+<p>How often is the model correct overall?</p>
+</blockquote>
+<p>Accuracy is useful when: - classes are balanced - all errors have
+similar consequences</p>
+<p>Accuracy can be misleading when: - one class is much more frequent
+than the other - false positives and false negatives have different
+costs</p>
+<hr />
+<h2 id="precision">Precision</h2>
+<p>Precision answers the question:</p>
+<blockquote>
+<p>When the model predicts “cat”, how often is it correct?</p>
+</blockquote>
+<p>Precision is important when: - false positives are costly - we want
+to trust positive predictions</p>
+<h3 id="examples">Examples:</h3>
+<ul>
+<li>Spam detection (do not mark real emails as spam)</li>
+<li>Medical diagnosis (avoid false alarms)</li>
+<li>Fire alarm systems (avoid unnecessary alerts)</li>
+</ul>
+<hr />
+<h2 id="recall">Recall</h2>
+<p>Recall answers the question:</p>
+<blockquote>
+<p>How many actual cats did the model successfully find?</p>
+</blockquote>
+<p>Recall is important when: - false negatives are costly - missing a
+positive case is dangerous</p>
+<h3 id="examples-1">Examples:</h3>
+<ul>
+<li>Cancer detection (do not miss sick patients)</li>
+<li>Security systems</li>
+<li>Defect detection in manufacturing</li>
+</ul>
+<hr />
+<h2 id="f1-score">F1-score</h2>
+<p>The F1-score balances <strong>precision and recall</strong>.</p>
+<p>It is useful when: - classes are imbalanced - both false positives
+and false negatives matter - a single metric is needed for
+comparison</p>
+<hr />
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>Evaluation metrics are not just numbers.</p>
+<p>They reflect: - the question the model is answering - the real-world
+cost of errors - the priorities of the problem</p>
+<p>Choosing the right metric is a <strong>design decision</strong>, not
+a technical detail.</p>
 </body>
 </html>

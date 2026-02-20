@@ -1,95 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title> overfitting underfitting.Value.ToUpper() verfitting
-overfitting underfitting.Value.ToUpper() nderfitting</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>overfitting_underfitting</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
-
 <body>
-
-  <div class="page-banner">
-    <h1> overfitting underfitting.Value.ToUpper() verfitting overfitting
-underfitting.Value.ToUpper() nderfitting</h1>
-    <p>Foundations topic</p>
-  </div>
-
-  <div class="container">
-    <div class="section-card">
-      <h1 id="overfitting-and-underfitting">Overfitting and
-      Underfitting</h1>
-      <p>When training a machine learning model, it is important to
-      evaluate not only how well it fits the training data, but also how
-      it performs on <strong>unseen data</strong>.</p>
-      <p>Two common problems are <strong>underfitting</strong> and
-      <strong>overfitting</strong>.</p>
-      <hr />
-      <h2 id="underfitting">Underfitting</h2>
-      <p>Underfitting occurs when a model is <strong>too simple</strong>
-      to capture the underlying patterns in the data.</p>
-      <p>An underfitted model: - has high bias - performs poorly on
-      training data - performs poorly on validation and test data</p>
-      <h3 id="common-causes">Common causes:</h3>
-      <ul>
-      <li>model too simple</li>
-      <li>insufficient features</li>
-      <li>excessive regularization</li>
-      </ul>
-      <hr />
-      <h2 id="overfitting">Overfitting</h2>
-      <p>Overfitting occurs when a model learns <strong>noise instead of
-      patterns</strong>.</p>
-      <p>An overfitted model: - has high variance - performs very well
-      on training data - performs poorly on validation and test data</p>
-      <h3 id="common-causes-1">Common causes:</h3>
-      <ul>
-      <li>model too complex</li>
-      <li>too many parameters</li>
-      <li>small training dataset</li>
-      </ul>
-      <hr />
-      <h2 id="training-vs-validation-performance">Training vs Validation
-      Performance</h2>
-      <p>A useful diagnostic tool is the comparison between training and
-      validation performance:</p>
-      <table>
-      <thead>
-      <tr>
-      <th>Scenario</th>
-      <th>Training Error</th>
-      <th>Validation Error</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Underfitting</td>
-      <td>High</td>
-      <td>High</td>
-      </tr>
-      <tr>
-      <td>Good fit</td>
-      <td>Low</td>
-      <td>Low</td>
-      </tr>
-      <tr>
-      <td>Overfitting</td>
-      <td>Low</td>
-      <td>High</td>
-      </tr>
-      </tbody>
-      </table>
-      <hr />
-      <h2 id="why-this-matters">Why This Matters</h2>
-      <p>Understanding overfitting and underfitting helps to: - choose
-      the right model complexity - interpret training results correctly
-      - improve generalization to new data</p>
-    </div>
-
-    <p style="text-align:center; margin-top:60px;">
-      <a href="../index.html">← Back</a>
-    </p>
-  </div>
-
+<h1 id="overfitting-and-underfitting">Overfitting and Underfitting</h1>
+<p>When training a machine learning model, it is important to evaluate
+not only how well it fits the training data, but also how it performs on
+<strong>unseen data</strong>.</p>
+<p>Two common problems are <strong>underfitting</strong> and
+<strong>overfitting</strong>.</p>
+<hr />
+<h2 id="underfitting">Underfitting</h2>
+<p>Underfitting occurs when a model is <strong>too simple</strong> to
+capture the underlying patterns in the data.</p>
+<p>An underfitted model: - has high bias - performs poorly on training
+data - performs poorly on validation and test data</p>
+<h3 id="common-causes">Common causes:</h3>
+<ul>
+<li>model too simple</li>
+<li>insufficient features</li>
+<li>excessive regularization</li>
+</ul>
+<hr />
+<h2 id="overfitting">Overfitting</h2>
+<p>Overfitting occurs when a model learns <strong>noise instead of
+patterns</strong>.</p>
+<p>An overfitted model: - has high variance - performs very well on
+training data - performs poorly on validation and test data</p>
+<h3 id="common-causes-1">Common causes:</h3>
+<ul>
+<li>model too complex</li>
+<li>too many parameters</li>
+<li>small training dataset</li>
+</ul>
+<hr />
+<h2 id="training-vs-validation-performance">Training vs Validation
+Performance</h2>
+<p>A useful diagnostic tool is the comparison between training and
+validation performance:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Training Error</th>
+<th>Validation Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Underfitting</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Good fit</td>
+<td>Low</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Overfitting</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>Understanding overfitting and underfitting helps to: - choose the
+right model complexity - interpret training results correctly - improve
+generalization to new data</p>
 </body>
 </html>

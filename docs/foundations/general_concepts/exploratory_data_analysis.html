@@ -1,121 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title> exploratory data analysis.Value.ToUpper() xploratory
-exploratory data analysis.Value.ToUpper() ata exploratory data
-analysis.Value.ToUpper() nalysis</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>exploratory_data_analysis</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
-
 <body>
-
-  <div class="page-banner">
-    <h1> exploratory data analysis.Value.ToUpper() xploratory
-exploratory data analysis.Value.ToUpper() ata exploratory data
-analysis.Value.ToUpper() nalysis</h1>
-    <p>Foundations topic</p>
-  </div>
-
-  <div class="container">
-    <div class="section-card">
-      <h1 id="exploratory-data-analysis-eda">Exploratory Data Analysis
-      (EDA)</h1>
-      <p>Every machine learning project begins with data.</p>
-      <p>Before training any model, the first essential step is:</p>
-      <p>Exploratory Data Analysis (EDA)</p>
-      <p>EDA is the process of understanding the dataset before making
-      modeling decisions.</p>
-      <hr />
-      <h1 id="why-eda-comes-first">Why EDA Comes First</h1>
-      <p>In this project, datasets were already prepared.</p>
-      <p>In real-world scenarios, you typically:</p>
-      <ol type="1">
-      <li>Download or collect a dataset</li>
-      <li>Inspect its structure</li>
-      <li>Clean and transform it</li>
-      <li>Define the prediction target</li>
-      <li>Choose a modeling approach</li>
-      </ol>
-      <p>Modeling decisions should never come before understanding the
-      data.</p>
-      <hr />
-      <h1 id="what-eda-involves">What EDA Involves</h1>
-      <p>EDA helps answer fundamental questions:</p>
-      <ul>
-      <li>What does the dataset contain?</li>
-      <li>How many samples and features exist?</li>
-      <li>Are there missing values?</li>
-      <li>Are there outliers?</li>
-      <li>What type of variables are present?</li>
-      <li>Is the data balanced?</li>
-      </ul>
-      <p>Without these answers, model selection is arbitrary.</p>
-      <hr />
-      <h1 id="strategic-decisions-during-eda">Strategic Decisions During
-      EDA</h1>
-      <p>EDA is not only descriptive — it is strategic.</p>
-      <p>During this phase, you may decide to:</p>
-      <ul>
-      <li>Remove irrelevant columns</li>
-      <li>Create new features (feature engineering)</li>
-      <li>Transform variables</li>
-      <li>Encode categorical variables</li>
-      <li>Handle missing values</li>
-      <li>Detect and treat outliers</li>
-      </ul>
-      <p>These decisions directly impact model performance.</p>
-      <hr />
-      <h1 id="choosing-the-target-variable">Choosing the Target
-      Variable</h1>
-      <p>EDA also helps determine:</p>
-      <ul>
-      <li>What should be predicted?</li>
-      <li>Is the problem regression or classification?</li>
-      <li>Is the target well defined?</li>
-      <li>Is the dataset suitable for supervised learning?</li>
-      </ul>
-      <p>Sometimes the label must be created from raw data.</p>
-      <hr />
-      <h1 id="data-understanding-before-model-choice">Data Understanding
-      Before Model Choice</h1>
-      <p>The type of data influences:</p>
-      <ul>
-      <li>The learning paradigm (supervised vs unsupervised)</li>
-      <li>The evaluation metric</li>
-      <li>The preprocessing strategy</li>
-      <li>The model family to use</li>
-      </ul>
-      <p>Example:</p>
-      <ul>
-      <li>Strong linear relationships → linear models may work well</li>
-      <li>Complex nonlinear patterns → more flexible models may be
-      required</li>
-      </ul>
-      <hr />
-      <h1 id="eda-vs-feature-engineering">EDA vs Feature
-      Engineering</h1>
-      <p>EDA focuses on understanding the dataset.</p>
-      <p>Feature engineering focuses on modifying the dataset to improve
-      learning.</p>
-      <p>In practice, these two processes often overlap.</p>
-      <hr />
-      <h1 id="key-principle">Key Principle</h1>
-      <p>Machine learning does not start with models.</p>
-      <p>It starts with understanding the data.</p>
-      <p>Well-executed EDA reduces:</p>
-      <ul>
-      <li>unnecessary experimentation</li>
-      <li>incorrect model selection</li>
-      <li>poor evaluation choices</li>
-      </ul>
-      <p>A strong data foundation leads to stronger models.</p>
-    </div>
-
-    <p style="text-align:center; margin-top:60px;">
-      <a href="../index.html">← Back</a>
-    </p>
-  </div>
-
+<h1 id="exploratory-data-analysis-eda">Exploratory Data Analysis
+(EDA)</h1>
+<p>Every machine learning project begins with data.</p>
+<p>Before training any model, the first essential step is:</p>
+<p>Exploratory Data Analysis (EDA)</p>
+<p>EDA is the process of understanding the dataset before making
+modeling decisions.</p>
+<hr />
+<h1 id="why-eda-comes-first">Why EDA Comes First</h1>
+<p>In this project, datasets were already prepared.</p>
+<p>In real-world scenarios, you typically:</p>
+<ol type="1">
+<li>Download or collect a dataset</li>
+<li>Inspect its structure</li>
+<li>Clean and transform it</li>
+<li>Define the prediction target</li>
+<li>Choose a modeling approach</li>
+</ol>
+<p>Modeling decisions should never come before understanding the
+data.</p>
+<hr />
+<h1 id="what-eda-involves">What EDA Involves</h1>
+<p>EDA helps answer fundamental questions:</p>
+<ul>
+<li>What does the dataset contain?</li>
+<li>How many samples and features exist?</li>
+<li>Are there missing values?</li>
+<li>Are there outliers?</li>
+<li>What type of variables are present?</li>
+<li>Is the data balanced?</li>
+</ul>
+<p>Without these answers, model selection is arbitrary.</p>
+<hr />
+<h1 id="strategic-decisions-during-eda">Strategic Decisions During
+EDA</h1>
+<p>EDA is not only descriptive — it is strategic.</p>
+<p>During this phase, you may decide to:</p>
+<ul>
+<li>Remove irrelevant columns</li>
+<li>Create new features (feature engineering)</li>
+<li>Transform variables</li>
+<li>Encode categorical variables</li>
+<li>Handle missing values</li>
+<li>Detect and treat outliers</li>
+</ul>
+<p>These decisions directly impact model performance.</p>
+<hr />
+<h1 id="choosing-the-target-variable">Choosing the Target Variable</h1>
+<p>EDA also helps determine:</p>
+<ul>
+<li>What should be predicted?</li>
+<li>Is the problem regression or classification?</li>
+<li>Is the target well defined?</li>
+<li>Is the dataset suitable for supervised learning?</li>
+</ul>
+<p>Sometimes the label must be created from raw data.</p>
+<hr />
+<h1 id="data-understanding-before-model-choice">Data Understanding
+Before Model Choice</h1>
+<p>The type of data influences:</p>
+<ul>
+<li>The learning paradigm (supervised vs unsupervised)</li>
+<li>The evaluation metric</li>
+<li>The preprocessing strategy</li>
+<li>The model family to use</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>Strong linear relationships → linear models may work well</li>
+<li>Complex nonlinear patterns → more flexible models may be
+required</li>
+</ul>
+<hr />
+<h1 id="eda-vs-feature-engineering">EDA vs Feature Engineering</h1>
+<p>EDA focuses on understanding the dataset.</p>
+<p>Feature engineering focuses on modifying the dataset to improve
+learning.</p>
+<p>In practice, these two processes often overlap.</p>
+<hr />
+<h1 id="key-principle">Key Principle</h1>
+<p>Machine learning does not start with models.</p>
+<p>It starts with understanding the data.</p>
+<p>Well-executed EDA reduces:</p>
+<ul>
+<li>unnecessary experimentation</li>
+<li>incorrect model selection</li>
+<li>poor evaluation choices</li>
+</ul>
+<p>A strong data foundation leads to stronger models.</p>
 </body>
 </html>
