@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> bias variance generalization.Value.ToUpper() ias bias variance
+generalization.Value.ToUpper() ariance bias variance
+generalization.Value.ToUpper() eneralization</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="page-banner">
+    <h1> bias variance generalization.Value.ToUpper() ias bias variance
+generalization.Value.ToUpper() ariance bias variance
+generalization.Value.ToUpper() eneralization</h1>
+    <p>Foundations topic</p>
+  </div>
+
+  <div class="container">
+    <div class="section-card">
+      <h1 id="bias-variance-and-generalization">Bias, Variance, and
+      Generalization</h1>
+      <p>In machine learning, the goal is to learn a function that
+      approximates the true relationship between inputs (X) and outputs
+      (y).</p>
+      <p>However, every model makes assumptions.</p>
+      <p>Prediction error can be decomposed into three components:</p>
+      <ul>
+      <li>Bias</li>
+      <li>Variance</li>
+      <li>Irreducible error</li>
+      </ul>
+      <p>Understanding these components explains why models underfit or
+      overfit.</p>
+      <hr />
+      <h1 id="the-true-function">The True Function</h1>
+      <p>Assume there exists an unknown true function:</p>
+      <pre><code>y = f(x) + ε</code></pre>
+      <p>Where: - f(x) is the real underlying relationship - ε is random
+      noise (irreducible error)</p>
+      <p>A model tries to approximate f(x) with an estimated
+      function:</p>
+      <pre><code>ŷ = g(x)</code></pre>
+      <p>The difference between f(x) and g(x) is where bias and variance
+      arise.</p>
+      <hr />
+      <h1 id="bias">Bias</h1>
+      <p>Bias measures how far the average model prediction is from the
+      true function.</p>
+      <p>Formally:</p>
+      <pre><code>Bias(x) = E[g(x)] − f(x)</code></pre>
+      <p>Bias represents systematic error.</p>
+      <p>Geometrically:</p>
+      <ul>
+      <li>If the true relationship is curved</li>
+      <li>But the model is linear</li>
+      </ul>
+      <p>The model cannot bend to match the curve.</p>
+      <p>It will consistently miss the true pattern, even if trained on
+      many datasets.</p>
+      <p>High bias means:</p>
+      <ul>
+      <li>The model is too rigid</li>
+      <li>The hypothesis space is too limited</li>
+      <li>Important structure cannot be captured</li>
+      </ul>
+      <p>This leads to underfitting.</p>
+      <hr />
+      <h1 id="variance">Variance</h1>
+      <p>Variance measures how much the model prediction changes when
+      trained on different datasets.</p>
+      <p>Formally:</p>
+      <pre><code>Variance(x) = E[(g(x) − E[g(x)])²]</code></pre>
+      <p>Geometrically:</p>
+      <ul>
+      <li>If we train the same complex model on slightly different
+      data,</li>
+      <li>The learned function may change significantly.</li>
+      </ul>
+      <p>High variance means:</p>
+      <ul>
+      <li>The model is too flexible</li>
+      <li>It adapts strongly to noise</li>
+      <li>It memorizes training samples</li>
+      </ul>
+      <p>This leads to overfitting.</p>
+      <hr />
+      <h1 id="error-decomposition">Error Decomposition</h1>
+      <p>For a given input x, expected prediction error can be
+      decomposed as:</p>
+      <pre><code>Total Error = Bias² + Variance + Irreducible Error</code></pre>
+      <p>Irreducible error comes from noise ε and cannot be
+      eliminated.</p>
+      <p>The model can only control bias and variance.</p>
+      <hr />
+      <h1 id="geometric-interpretation">Geometric Interpretation</h1>
+      <p>Consider fitting points in 2D space.</p>
+      <p>Case 1: Linear model for nonlinear data - The fitted line
+      cannot follow the curve - Systematic deviation appears → High
+      Bias</p>
+      <p>Case 2: Very high-degree polynomial - The curve passes through
+      every point - Small fluctuations in data drastically change the
+      shape → High Variance</p>
+      <p>The ideal model:</p>
+      <ul>
+      <li>Follows the true pattern</li>
+      <li>Ignores random noise</li>
+      <li>Remains stable across datasets</li>
+      </ul>
+      <hr />
+      <h1 id="biasvariance-tradeoff">Bias–Variance Tradeoff</h1>
+      <p>Model complexity affects both components:</p>
+      <ul>
+      <li>Increasing complexity ↓ Bias</li>
+      <li>Increasing complexity ↑ Variance</li>
+      </ul>
+      <p>There is no free improvement.</p>
+      <p>The goal is to find a balance that minimizes total error.</p>
+      <hr />
+      <h1 id="connection-to-overfitting-and-underfitting">Connection to
+      Overfitting and Underfitting</h1>
+      <p>Underfitting: - High Bias - Low Variance - Poor training
+      performance</p>
+      <p>Overfitting: - Low Bias - High Variance - Large gap between
+      training and validation performance</p>
+      <hr />
+      <h1 id="why-this-matters">Why This Matters</h1>
+      <p>Bias and variance explain:</p>
+      <ul>
+      <li>Why adding parameters sometimes improves performance</li>
+      <li>Why adding too many parameters can hurt performance</li>
+      <li>Why regularization works</li>
+      <li>Why more data reduces variance</li>
+      </ul>
+      <p>They are central to understanding model behavior.</p>
+    </div>
+
+    <p style="text-align:center; margin-top:60px;">
+      <a href="../index.html">← Back</a>
+    </p>
+  </div>
+
+</body>
+</html>

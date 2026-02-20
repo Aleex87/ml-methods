@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> train validation test.Value.ToUpper() rain train validation
+test.Value.ToUpper() alidation train validation test.Value.ToUpper()
+est</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="page-banner">
+    <h1> train validation test.Value.ToUpper() rain train validation
+test.Value.ToUpper() alidation train validation test.Value.ToUpper()
+est</h1>
+    <p>Foundations topic</p>
+  </div>
+
+  <div class="container">
+    <div class="section-card">
+      <h1 id="train-validation-and-test-sets-in-deep-learning">Train,
+      Validation, and Test Sets in Deep Learning</h1>
+      <p>In deep learning, data splitting is not only good practice — it
+      is essential for controlling model behavior during training.</p>
+      <p>Neural networks contain many parameters. Without proper data
+      separation, overfitting happens quickly.</p>
+      <hr />
+      <h1 id="the-three-dataset-splits">The Three Dataset Splits</h1>
+      <p>A deep learning workflow typically uses:</p>
+      <ul>
+      <li>Training set</li>
+      <li>Validation set</li>
+      <li>Test set</li>
+      </ul>
+      <p>Each split has a specific role.</p>
+      <hr />
+      <h1 id="training-set">Training Set</h1>
+      <p>The training set is used to:</p>
+      <ul>
+      <li>update model parameters</li>
+      <li>compute gradients</li>
+      <li>minimize the loss function</li>
+      </ul>
+      <p>During training:</p>
+      <ul>
+      <li>the model sees this data repeatedly</li>
+      <li>parameters are updated using gradient descent</li>
+      <li>learning happens here</li>
+      </ul>
+      <p>The training set directly influences the model.</p>
+      <hr />
+      <h1 id="validation-set">Validation Set</h1>
+      <p>The validation set is used to:</p>
+      <ul>
+      <li>monitor model performance</li>
+      <li>tune hyperparameters</li>
+      <li>detect overfitting</li>
+      </ul>
+      <p>The model does not update its parameters based on validation
+      data.</p>
+      <p>Instead, validation performance helps decide:</p>
+      <ul>
+      <li>when to stop training</li>
+      <li>which architecture is better</li>
+      <li>which hyperparameters to keep</li>
+      </ul>
+      <hr />
+      <h1 id="test-set">Test Set</h1>
+      <p>The test set is used only once:</p>
+      <ul>
+      <li>after training is complete</li>
+      <li>after hyperparameters are chosen</li>
+      </ul>
+      <p>It provides an unbiased estimate of generalization
+      performance.</p>
+      <p>The test set must never influence model decisions.</p>
+      <hr />
+      <h1 id="why-deep-learning-requires-careful-splitting">Why Deep
+      Learning Requires Careful Splitting</h1>
+      <p>Neural networks are highly flexible.</p>
+      <p>They can:</p>
+      <ul>
+      <li>memorize training data</li>
+      <li>adapt to noise</li>
+      <li>overfit easily</li>
+      </ul>
+      <p>Validation monitoring is therefore critical.</p>
+      <hr />
+      <h1 id="epochs-and-monitoring">Epochs and Monitoring</h1>
+      <p>In deep learning, training occurs over multiple epochs.</p>
+      <p>An epoch is:</p>
+      <ul>
+      <li>one complete pass over the training dataset</li>
+      </ul>
+      <p>After each epoch, performance is often evaluated on the
+      validation set.</p>
+      <p>Typical training behavior:</p>
+      <ul>
+      <li>Training loss decreases steadily</li>
+      <li>Validation loss decreases at first</li>
+      <li>Then validation loss may increase</li>
+      </ul>
+      <p>This increase indicates overfitting.</p>
+      <hr />
+      <h1 id="early-stopping">Early Stopping</h1>
+      <p>Early stopping is a regularization technique.</p>
+      <p>Training stops when:</p>
+      <ul>
+      <li>validation performance stops improving</li>
+      <li>validation loss begins to increase consistently</li>
+      </ul>
+      <p>This prevents the model from memorizing noise.</p>
+      <hr />
+      <h1 id="common-split-ratios">Common Split Ratios</h1>
+      <p>Typical splits include:</p>
+      <ul>
+      <li>70% training</li>
+      <li>15% validation</li>
+      <li>15% test</li>
+      </ul>
+      <p>For large datasets:</p>
+      <ul>
+      <li>80% training</li>
+      <li>10% validation</li>
+      <li>10% test</li>
+      </ul>
+      <p>The exact ratio depends on dataset size.</p>
+      <hr />
+      <h1 id="key-principle">Key Principle</h1>
+      <p>Training data teaches the model.</p>
+      <p>Validation data guides decisions.</p>
+      <p>Test data evaluates final performance.</p>
+      <p>Mixing these roles compromises generalization.</p>
+    </div>
+
+    <p style="text-align:center; margin-top:60px;">
+      <a href="../index.html">← Back</a>
+    </p>
+  </div>
+
+</body>
+</html>

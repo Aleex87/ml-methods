@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> data loading real world.Value.ToUpper() ata data loading real
+world.Value.ToUpper() oading data loading real world.Value.ToUpper() eal
+data loading real world.Value.ToUpper() orld</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="page-banner">
+    <h1> data loading real world.Value.ToUpper() ata data loading real
+world.Value.ToUpper() oading data loading real world.Value.ToUpper() eal
+data loading real world.Value.ToUpper() orld</h1>
+    <p>Foundations topic</p>
+  </div>
+
+  <div class="container">
+    <div class="section-card">
+      <h1 id="data-loading-in-real-world-projects">Data Loading in
+      Real-World Projects</h1>
+      <p>In the model demonstrations of this project, we used structured
+      data from the Sakila database.</p>
+      <p>The dataset was already prepared and available.</p>
+      <p>In real-world machine learning projects, this is rarely the
+      case.</p>
+      <p>Data must usually be:</p>
+      <ul>
+      <li>downloaded</li>
+      <li>extracted</li>
+      <li>cleaned</li>
+      <li>loaded manually</li>
+      </ul>
+      <p>Understanding how data is loaded is a fundamental skill.</p>
+      <hr />
+      <h1 id="common-data-sources">Common Data Sources</h1>
+      <p>Real-world datasets may come from:</p>
+      <ul>
+      <li>CSV files</li>
+      <li>Excel files</li>
+      <li>SQL databases</li>
+      <li>APIs</li>
+      <li>Cloud storage</li>
+      <li>Image folders</li>
+      <li>JSON files</li>
+      </ul>
+      <p>The loading method depends on the data format.</p>
+      <hr />
+      <h1 id="loading-a-csv-file-most-common-case">Loading a CSV File
+      (Most Common Case)</h1>
+      <p>CSV is one of the most widely used formats.</p>
+      <p>Example in Python:</p>
+      <div class="sourceCode" id="cb1"><pre
+      class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/dataset.csv&quot;</span>)</span></code></pre></div>
+      <p>This reads the file into a DataFrame.</p>
+      <p>Other formats are similar:</p>
+      <div class="sourceCode" id="cb2"><pre
+      class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pd.read_excel(<span class="st">&quot;data/dataset.xlsx&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pd.read_json(<span class="st">&quot;data/dataset.json&quot;</span>)</span></code></pre></div>
+      <p>The function changes, but the logic remains the same.</p>
+      <hr />
+      <h1 id="understanding-file-paths">Understanding File Paths</h1>
+      <p>Correct file paths are essential.</p>
+      <p>Example project structure:</p>
+      <p>project/ │ ├── data/ │ └── dataset.csv │ └── notebooks/ └──
+      analysis.ipynb</p>
+      <p>If the notebook is inside notebooks/, and the data is in data/,
+      the relative path may look like:</p>
+      <p>../data/dataset.csv</p>
+      <hr />
+      <h1 id="loading-data-from-a-database">Loading Data from a
+      Database</h1>
+      <p>In real-world applications, data is often stored in SQL
+      databases.</p>
+      <p>Example using a context manager:</p>
+      <div class="sourceCode" id="cb3"><pre
+      class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;database.db&quot;</span>) <span class="im">as</span> conn:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_sql_query(<span class="st">&quot;SELECT * FROM table_name&quot;</span>, conn)</span></code></pre></div>
+      <p>Using with ensures that:</p>
+      <p>the connection is automatically closed</p>
+      <p>resources are properly managed</p>
+      <p>This approach is recommended for safe database access.</p>
+      <h1 id="deep-learning-datasets">Deep Learning Datasets</h1>
+      <p>In deep learning, especially for images, datasets are usually
+      organized into folders.</p>
+      <p>Typical structure:</p>
+      <p>dataset/ │ ├── train/ │ ├── cat/ │ └── dog/ │ └── test/ ├──
+      cat/ └── dog/</p>
+      <p>Each folder represents a class.</p>
+      <p>The directory structure defines the labels.</p>
+      <p>Libraries like PyTorch and TensorFlow can automatically assign
+      labels based on folder names.</p>
+      <hr />
+      <h1 id="raw-data-conversion">Raw Data Conversion</h1>
+      <p>Sometimes data is not directly usable.</p>
+      <p>Examples:</p>
+      <p>Images stored as raw arrays</p>
+      <p>Sensor data in binary format</p>
+      <p>Text data in custom formats</p>
+      <p>In these cases, a preprocessing script is required to:</p>
+      <p>parse raw data</p>
+      <p>convert formats</p>
+      <p>save structured files</p>
+      <p>Data preparation is often one of the most time-consuming steps
+      in a machine learning project.</p>
+      <h1 id="key-takeaways">Key Takeaways</h1>
+      <p>In this project, datasets were pre-structured to focus on
+      learning algorithms.</p>
+      <p>In real-world projects, you must:</p>
+      <ul>
+      <li><p>understand file systems</p></li>
+      <li><p>manage paths correctly</p></li>
+      <li><p>load different data formats</p></li>
+      <li><p>handle database connections safely</p></li>
+      <li><p>preprocess raw data</p></li>
+      </ul>
+      <p>Model training begins only after data is correctly loaded and
+      prepared.</p>
+    </div>
+
+    <p style="text-align:center; margin-top:60px;">
+      <a href="../index.html">← Back</a>
+    </p>
+  </div>
+
+</body>
+</html>
