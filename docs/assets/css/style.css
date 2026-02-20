@@ -1,116 +1,131 @@
-/* =========================
-   GLOBAL STYLE
-========================= */
+/* ===== GLOBAL STYLE ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f8fafc;
-  color: #0f172a;
-  line-height: 1.6;
+  padding: 0;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8fafc;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+/* ===== HERO (Homepage) ===== */
 
 .hero {
   text-align: center;
-  padding: 100px 20px 50px 20px;
-}
-
-.hero h1 {
-  font-size: 52px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  padding: 100px 20px 60px 20px;
 }
 
 .hero p {
   font-size: 18px;
+  max-width: 600px;
+  margin: 20px auto 0 auto;
   color: #475569;
-  max-width: 720px;
-  margin: 0 auto;
 }
 
-/* =========================
-   CARD LAYOUT
-========================= */
+/* ===== CARD GRID ===== */
 
 .card-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding: 60px 20px 100px 20px;
+  gap: 30px;
+  padding: 40px 20px 100px 20px;
   flex-wrap: wrap;
 }
 
 .card {
-  background-color: white;
-  width: 300px;
+  background: #ffffff;
   padding: 35px;
-  border-radius: 14px;
+  width: 280px;
   text-decoration: none;
-  color: inherit;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
   transition: all 0.25s ease;
 }
 
 .card h2 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-weight: 600;
+  margin-bottom: 12px;
 }
 
 .card p {
-  color: #64748b;
+  font-size: 15px;
+  color: #475569;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border-color: #cbd5e1;
 }
 
-/* =========================
-   HUB PAGES
-========================= */
+/* ===== PAGE BANNER ===== */
+
+.page-banner {
+  text-align: center;
+  padding: 80px 20px 50px 20px;
+}
+
+.page-banner p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #475569;
+}
+
+/* ===== CONTENT CONTAINER ===== */
 
 .container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 80px 20px;
+  margin: auto;
+  padding: 0 20px 80px 20px;
 }
 
-h1 {
-  font-size: 42px;
+/* ===== SECTION CARD ===== */
+
+.section-card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
   margin-bottom: 30px;
+  transition: all 0.2s ease;
 }
 
-h2 {
-  margin-top: 50px;
-  font-size: 26px;
+.section-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
-h3 {
-  margin-top: 30px;
-  font-size: 20px;
-}
-
-hr {
-  border: none;
-  height: 1px;
-  background-color: #e2e8f0;
-  margin: 40px 0;
-}
-
-ul {
+.section-card ul {
+  margin-top: 10px;
   padding-left: 20px;
 }
 
-li {
-  margin-bottom: 10px;
+.section-card li {
+  margin-bottom: 8px;
 }
+
+/* ===== LINKS ===== */
 
 a {
   color: #2563eb;
@@ -121,67 +136,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
-/* =========================
-   SECTION CARDS
-========================= */
 
-.section-card {
-  background-color: white;
-  border-radius: 16px;
-  padding: 40px;
-  margin-bottom: 40px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-}
+/* ===== FOOTER BACK LINK ===== */
 
-.section-card h2 {
-  margin-top: 0;
-}
-
-.section-card ul {
-  margin-top: 15px;
-}
-
-/* =========================
-   PAGE BANNER
-========================= */
-
-.page-banner {
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  color: white;
-  padding: 70px 20px;
+.back-link {
   text-align: center;
-  margin-bottom: 60px;
-}
-
-.page-banner h1 {
-  margin: 0;
-  font-size: 44px;
-  font-weight: 700;
-}
-
-.page-banner p {
-  margin-top: 15px;
-  font-size: 18px;
-  opacity: 0.9;
-}
-/* Deep Learning Banner Variant */
-
-.page-banner-dl {
-  background: linear-gradient(135deg, #6366f1, #4338ca);
-  color: white;
-  padding: 70px 20px;
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.page-banner-dl h1 {
-  margin: 0;
-  font-size: 44px;
-  font-weight: 700;
-}
-
-.page-banner-dl p {
-  margin-top: 15px;
-  font-size: 18px;
-  opacity: 0.9;
+  margin-top: 60px;
 }
