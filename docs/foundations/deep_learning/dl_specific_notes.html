@@ -1,132 +1,135 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>dl_specific_notes</title>
-  <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <meta charset="UTF-8">
+  <title></title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
+
 <body>
-<h1 id="key-concepts-in-deep-learning-training">Key Concepts in Deep
-Learning Training</h1>
-<p>Deep learning models differ from classical machine learning models
-mainly because of how they are trained.</p>
-<p>Neural networks contain many parameters, and their behavior depends
-strongly on training configuration choices.</p>
-<p>Understanding these elements is essential for building stable and
-effective models.</p>
-<hr />
-<h1 id="learning-rate">Learning Rate</h1>
-<p>The learning rate controls how much model parameters are updated
-during each optimization step.</p>
-<p>If the learning rate is:</p>
-<p>Too high: - training becomes unstable - loss may oscillate or
-diverge</p>
-<p>Too low: - training becomes very slow - the model may get stuck</p>
-<p>Choosing an appropriate learning rate is one of the most important
-decisions in deep learning.</p>
-<hr />
-<h1 id="batch-size">Batch Size</h1>
-<p>Batch size defines how many samples are processed before updating
-model parameters.</p>
-<p>Small batch size: - noisier gradient updates - more regularization
-effect - higher training time per epoch</p>
-<p>Large batch size: - smoother gradient updates - faster computation on
-GPUs - may require more memory</p>
-<p>Batch size influences both training dynamics and generalization.</p>
-<hr />
-<h1 id="epochs">Epochs</h1>
-<p>An epoch is one full pass through the training dataset.</p>
-<p>Deep learning models typically require multiple epochs to
-converge.</p>
-<p>However:</p>
-<ul>
-<li>Too few epochs → underfitting</li>
-<li>Too many epochs → overfitting</li>
-</ul>
-<p>Validation monitoring helps determine when to stop training.</p>
-<hr />
-<h1 id="optimizers">Optimizers</h1>
-<p>Optimizers control how gradients update model parameters.</p>
-<p>Common optimizers include:</p>
-<ul>
-<li>Stochastic Gradient Descent (SGD)</li>
-<li>Adam</li>
-<li>RMSprop</li>
-</ul>
-<p>Different optimizers:</p>
-<ul>
-<li>converge at different speeds</li>
-<li>handle noisy gradients differently</li>
-<li>may affect final model performance</li>
-</ul>
-<p>Adam is widely used for fast convergence, while SGD is often
-preferred for fine-tuning and stability.</p>
-<hr />
-<h1 id="loss-function">Loss Function</h1>
-<p>The loss function defines what the model is trying to minimize.</p>
-<p>Examples:</p>
-<ul>
-<li>Mean Squared Error (regression)</li>
-<li>Cross-Entropy Loss (classification)</li>
-</ul>
-<p>The loss guides parameter updates, but does not always directly
-correspond to the evaluation metric.</p>
-<hr />
-<h1 id="overfitting-in-deep-learning">Overfitting in Deep Learning</h1>
-<p>Deep networks are highly flexible.</p>
-<p>They can:</p>
-<ul>
-<li>memorize training data</li>
-<li>learn noise</li>
-<li>overfit small datasets</li>
-</ul>
-<p>Common techniques to reduce overfitting:</p>
-<ul>
-<li>Early stopping</li>
-<li>Dropout</li>
-<li>Data augmentation</li>
-<li>Regularization</li>
-</ul>
-<hr />
-<h1 id="computational-considerations">Computational Considerations</h1>
-<p>Deep learning models can be computationally intensive.</p>
-<p>Training speed depends on:</p>
-<ul>
-<li>dataset size</li>
-<li>model size</li>
-<li>hardware resources</li>
-</ul>
-<p>Large models require more memory and longer training time.</p>
-<p>Efficient configuration choices can significantly improve
-performance.</p>
-<hr />
-<h1 id="key-principle">Key Principle</h1>
-<p>Deep learning performance depends not only on architecture, but also
-on training configuration.</p>
-<p>Learning rate, batch size, optimizer, and regularization techniques
-collectively determine model behavior.</p>
-<p>Careful tuning is essential for reliable results.</p>
+
+  <div class="page-banner">
+    <h1></h1>
+    <p>Foundations topic</p>
+  </div>
+
+  <div class="container">
+    <div class="section-card">
+      <h1 id="key-concepts-in-deep-learning-training">Key Concepts in
+      Deep Learning Training</h1>
+      <p>Deep learning models differ from classical machine learning
+      models mainly because of how they are trained.</p>
+      <p>Neural networks contain many parameters, and their behavior
+      depends strongly on training configuration choices.</p>
+      <p>Understanding these elements is essential for building stable
+      and effective models.</p>
+      <hr />
+      <h1 id="learning-rate">Learning Rate</h1>
+      <p>The learning rate controls how much model parameters are
+      updated during each optimization step.</p>
+      <p>If the learning rate is:</p>
+      <p>Too high: - training becomes unstable - loss may oscillate or
+      diverge</p>
+      <p>Too low: - training becomes very slow - the model may get
+      stuck</p>
+      <p>Choosing an appropriate learning rate is one of the most
+      important decisions in deep learning.</p>
+      <hr />
+      <h1 id="batch-size">Batch Size</h1>
+      <p>Batch size defines how many samples are processed before
+      updating model parameters.</p>
+      <p>Small batch size: - noisier gradient updates - more
+      regularization effect - higher training time per epoch</p>
+      <p>Large batch size: - smoother gradient updates - faster
+      computation on GPUs - may require more memory</p>
+      <p>Batch size influences both training dynamics and
+      generalization.</p>
+      <hr />
+      <h1 id="epochs">Epochs</h1>
+      <p>An epoch is one full pass through the training dataset.</p>
+      <p>Deep learning models typically require multiple epochs to
+      converge.</p>
+      <p>However:</p>
+      <ul>
+      <li>Too few epochs → underfitting</li>
+      <li>Too many epochs → overfitting</li>
+      </ul>
+      <p>Validation monitoring helps determine when to stop
+      training.</p>
+      <hr />
+      <h1 id="optimizers">Optimizers</h1>
+      <p>Optimizers control how gradients update model parameters.</p>
+      <p>Common optimizers include:</p>
+      <ul>
+      <li>Stochastic Gradient Descent (SGD)</li>
+      <li>Adam</li>
+      <li>RMSprop</li>
+      </ul>
+      <p>Different optimizers:</p>
+      <ul>
+      <li>converge at different speeds</li>
+      <li>handle noisy gradients differently</li>
+      <li>may affect final model performance</li>
+      </ul>
+      <p>Adam is widely used for fast convergence, while SGD is often
+      preferred for fine-tuning and stability.</p>
+      <hr />
+      <h1 id="loss-function">Loss Function</h1>
+      <p>The loss function defines what the model is trying to
+      minimize.</p>
+      <p>Examples:</p>
+      <ul>
+      <li>Mean Squared Error (regression)</li>
+      <li>Cross-Entropy Loss (classification)</li>
+      </ul>
+      <p>The loss guides parameter updates, but does not always directly
+      correspond to the evaluation metric.</p>
+      <hr />
+      <h1 id="overfitting-in-deep-learning">Overfitting in Deep
+      Learning</h1>
+      <p>Deep networks are highly flexible.</p>
+      <p>They can:</p>
+      <ul>
+      <li>memorize training data</li>
+      <li>learn noise</li>
+      <li>overfit small datasets</li>
+      </ul>
+      <p>Common techniques to reduce overfitting:</p>
+      <ul>
+      <li>Early stopping</li>
+      <li>Dropout</li>
+      <li>Data augmentation</li>
+      <li>Regularization</li>
+      </ul>
+      <hr />
+      <h1 id="computational-considerations">Computational
+      Considerations</h1>
+      <p>Deep learning models can be computationally intensive.</p>
+      <p>Training speed depends on:</p>
+      <ul>
+      <li>dataset size</li>
+      <li>model size</li>
+      <li>hardware resources</li>
+      </ul>
+      <p>Large models require more memory and longer training time.</p>
+      <p>Efficient configuration choices can significantly improve
+      performance.</p>
+      <hr />
+      <h1 id="key-principle">Key Principle</h1>
+      <p>Deep learning performance depends not only on architecture, but
+      also on training configuration.</p>
+      <p>Learning rate, batch size, optimizer, and regularization
+      techniques collectively determine model behavior.</p>
+      <p>Careful tuning is essential for reliable results.</p>
+    </div>
+
+    <div class="back-link">
+      <a href="../index.html">← Back</a>
+    </div>
+  </div>
+
 </body>
 </html>

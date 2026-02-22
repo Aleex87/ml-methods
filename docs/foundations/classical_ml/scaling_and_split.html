@@ -1,132 +1,134 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>scaling_and_split</title>
-  <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <meta charset="UTF-8">
+  <title></title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
+
 <body>
-<h1 id="data-splitting-and-feature-scaling">Data Splitting and Feature
-Scaling</h1>
-<p>Before training a machine learning model, data must be prepared
-correctly.</p>
-<p>Two fundamental steps are: - splitting the dataset - scaling the
-features</p>
-<p>Both are essential for building reliable and stable models.</p>
-<hr />
-<h1 id="train-validation-test-split">Train / Validation / Test
-Split</h1>
-<p>A model must be evaluated on data it has never seen before.</p>
-<p>For this reason, datasets are usually divided into:</p>
-<ul>
-<li><strong>Training set</strong> → used to train the model</li>
-<li><strong>Validation set</strong> → used to tune hyperparameters</li>
-<li><strong>Test set</strong> → used for final evaluation</li>
-</ul>
-<p>Typical splits: - 70% training - 15% validation - 15% test</p>
-<p>The key principle is:</p>
-<blockquote>
-<p>The test set must never influence training decisions.</p>
-</blockquote>
-<p>This ensures proper generalization measurement.</p>
-<hr />
-<h1 id="why-feature-scaling-is-important">Why Feature Scaling Is
-Important</h1>
-<p>Many machine learning algorithms are sensitive to feature
-magnitude.</p>
-<p>If one feature ranges from: - 0 to 1</p>
-<p>and another ranges from: - 0 to 10,000</p>
-<p>the second feature may dominate the learning process.</p>
-<p>Scaling ensures that features contribute more evenly.</p>
-<p>Scaling is especially important for: - KNN - Linear Regression -
-Logistic Regression - Neural Networks - Gradient Descent-based
-models</p>
-<p>It is less important for: - Tree-based models (e.g., Decision Trees,
-Random Forest)</p>
-<hr />
-<h1 id="standardization-standard-scaling">Standardization (Standard
-Scaling)</h1>
-<p>Standardization transforms data so that:</p>
-<ul>
-<li>mean becomes 0</li>
-<li>standard deviation becomes 1</li>
-</ul>
-<p>After transformation: - most values fall roughly between -3 and
-+3</p>
-<p>This method does not fix a strict range, but centers the
-distribution.</p>
-<p>It works well when: - data is approximately normally distributed -
-features have different units</p>
-<hr />
-<h1 id="min-max-scaling">Min-Max Scaling</h1>
-<p>Min-Max scaling rescales values into a fixed range.</p>
-<p>Common ranges: - 0 to 1 - -1 to 1</p>
-<p>After transformation: - the smallest value becomes the minimum of the
-range - the largest value becomes the maximum of the range</p>
-<p>It preserves the shape of the distribution, but is sensitive to
-outliers.</p>
-<p>Best used when: - you need bounded input values - neural networks
-expect a specific range</p>
-<hr />
-<h1 id="robust-scaling">Robust Scaling</h1>
-<p>Robust scaling uses: - median - interquartile range (IQR)</p>
-<p>Instead of mean and standard deviation.</p>
-<p>It is less sensitive to outliers.</p>
-<p>There is no fixed output range, but extreme values influence the
-transformation less.</p>
-<p>Best used when: - data contains significant outliers - distribution
-is not normal</p>
-<hr />
-<h1 id="normalization-vector-normalization">Normalization (Vector
-Normalization)</h1>
-<p>Normalization is different from scaling.</p>
-<p>Instead of transforming each feature independently, normalization
-rescales each sample (row) so that:</p>
-<ul>
-<li>its vector length becomes 1</li>
-</ul>
-<p>This is often called L2 normalization.</p>
-<p>After normalization: - each data point lies on the unit sphere</p>
-<p>Normalization is useful when: - direction matters more than magnitude
-- working with text data or embeddings - using similarity-based
-models</p>
-<hr />
-<h1 id="scaling-vs-normalization">Scaling vs Normalization</h1>
-<p>Scaling: - acts on individual features (columns) - changes feature
-distribution - keeps sample structure intact</p>
-<p>Normalization: - acts on individual samples (rows) - rescales entire
-feature vectors - changes magnitude relationships inside a sample</p>
-<p>They solve different problems.</p>
-<hr />
-<h1 id="important-practical-rule">Important Practical Rule</h1>
-<p>Scaling must be:</p>
-<ol type="1">
-<li>fitted on the training data</li>
-<li>applied to validation and test data using the same parameters</li>
-</ol>
-<p>Never fit scaling on the full dataset.</p>
-<p>Otherwise, data leakage occurs.</p>
+
+  <div class="page-banner">
+    <h1></h1>
+    <p>Foundations topic</p>
+  </div>
+
+  <div class="container">
+    <div class="section-card">
+      <h1 id="data-splitting-and-feature-scaling">Data Splitting and
+      Feature Scaling</h1>
+      <p>Before training a machine learning model, data must be prepared
+      correctly.</p>
+      <p>Two fundamental steps are: - splitting the dataset - scaling
+      the features</p>
+      <p>Both are essential for building reliable and stable models.</p>
+      <hr />
+      <h1 id="train-validation-test-split">Train / Validation / Test
+      Split</h1>
+      <p>A model must be evaluated on data it has never seen before.</p>
+      <p>For this reason, datasets are usually divided into:</p>
+      <ul>
+      <li><strong>Training set</strong> → used to train the model</li>
+      <li><strong>Validation set</strong> → used to tune
+      hyperparameters</li>
+      <li><strong>Test set</strong> → used for final evaluation</li>
+      </ul>
+      <p>Typical splits: - 70% training - 15% validation - 15% test</p>
+      <p>The key principle is:</p>
+      <blockquote>
+      <p>The test set must never influence training decisions.</p>
+      </blockquote>
+      <p>This ensures proper generalization measurement.</p>
+      <hr />
+      <h1 id="why-feature-scaling-is-important">Why Feature Scaling Is
+      Important</h1>
+      <p>Many machine learning algorithms are sensitive to feature
+      magnitude.</p>
+      <p>If one feature ranges from: - 0 to 1</p>
+      <p>and another ranges from: - 0 to 10,000</p>
+      <p>the second feature may dominate the learning process.</p>
+      <p>Scaling ensures that features contribute more evenly.</p>
+      <p>Scaling is especially important for: - KNN - Linear Regression
+      - Logistic Regression - Neural Networks - Gradient Descent-based
+      models</p>
+      <p>It is less important for: - Tree-based models (e.g., Decision
+      Trees, Random Forest)</p>
+      <hr />
+      <h1 id="standardization-standard-scaling">Standardization
+      (Standard Scaling)</h1>
+      <p>Standardization transforms data so that:</p>
+      <ul>
+      <li>mean becomes 0</li>
+      <li>standard deviation becomes 1</li>
+      </ul>
+      <p>After transformation: - most values fall roughly between -3 and
+      +3</p>
+      <p>This method does not fix a strict range, but centers the
+      distribution.</p>
+      <p>It works well when: - data is approximately normally
+      distributed - features have different units</p>
+      <hr />
+      <h1 id="min-max-scaling">Min-Max Scaling</h1>
+      <p>Min-Max scaling rescales values into a fixed range.</p>
+      <p>Common ranges: - 0 to 1 - -1 to 1</p>
+      <p>After transformation: - the smallest value becomes the minimum
+      of the range - the largest value becomes the maximum of the
+      range</p>
+      <p>It preserves the shape of the distribution, but is sensitive to
+      outliers.</p>
+      <p>Best used when: - you need bounded input values - neural
+      networks expect a specific range</p>
+      <hr />
+      <h1 id="robust-scaling">Robust Scaling</h1>
+      <p>Robust scaling uses: - median - interquartile range (IQR)</p>
+      <p>Instead of mean and standard deviation.</p>
+      <p>It is less sensitive to outliers.</p>
+      <p>There is no fixed output range, but extreme values influence
+      the transformation less.</p>
+      <p>Best used when: - data contains significant outliers -
+      distribution is not normal</p>
+      <hr />
+      <h1 id="normalization-vector-normalization">Normalization (Vector
+      Normalization)</h1>
+      <p>Normalization is different from scaling.</p>
+      <p>Instead of transforming each feature independently,
+      normalization rescales each sample (row) so that:</p>
+      <ul>
+      <li>its vector length becomes 1</li>
+      </ul>
+      <p>This is often called L2 normalization.</p>
+      <p>After normalization: - each data point lies on the unit
+      sphere</p>
+      <p>Normalization is useful when: - direction matters more than
+      magnitude - working with text data or embeddings - using
+      similarity-based models</p>
+      <hr />
+      <h1 id="scaling-vs-normalization">Scaling vs Normalization</h1>
+      <p>Scaling: - acts on individual features (columns) - changes
+      feature distribution - keeps sample structure intact</p>
+      <p>Normalization: - acts on individual samples (rows) - rescales
+      entire feature vectors - changes magnitude relationships inside a
+      sample</p>
+      <p>They solve different problems.</p>
+      <hr />
+      <h1 id="important-practical-rule">Important Practical Rule</h1>
+      <p>Scaling must be:</p>
+      <ol type="1">
+      <li>fitted on the training data</li>
+      <li>applied to validation and test data using the same
+      parameters</li>
+      </ol>
+      <p>Never fit scaling on the full dataset.</p>
+      <p>Otherwise, data leakage occurs.</p>
+    </div>
+
+    <div class="back-link">
+      <a href="../index.html">← Back</a>
+    </div>
+  </div>
+
 </body>
 </html>

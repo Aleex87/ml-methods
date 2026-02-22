@@ -161,7 +161,7 @@ a:hover {
   padding: 50px;
   border-radius: 18px;
   border: 1px solid var(--border);
-  margin-top: -65px;          /* pulls the first card up under the banner */
+  margin-top: 40px;   
   margin-bottom: 45px;
   box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;

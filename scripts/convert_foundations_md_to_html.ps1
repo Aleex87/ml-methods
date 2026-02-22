@@ -1,4 +1,7 @@
-$mdFiles = Get-ChildItem -Path "docs/foundations" -Recurse -Filter *.md
+$projectRoot = Split-Path -Parent $PSScriptRoot
+$templatePath = Join-Path $projectRoot "docs\templates\md_page_template.html"
+
+$mdFiles = Get-ChildItem -Path (Join-Path $projectRoot "docs\foundations") -Recurse -Filter *.md
 
 foreach ($file in $mdFiles) {
 
@@ -8,8 +11,7 @@ foreach ($file in $mdFiles) {
         -f markdown `
         -t html `
         -s `
-        -c ../../assets/css/style.css `
-        --metadata title="" `
+        --template "$templatePath" `
         -o $htmlPath
 
     Write-Host "Converted $($file.Name)"
